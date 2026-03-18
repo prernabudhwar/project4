@@ -1,0 +1,48 @@
+<mvc:View
+    controllerName="com.capgemini.project4.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smartForm="sap.ui.comp.smartform"
+    xmlns:smartField="sap.ui.comp.smartfield"
+    xmlns:smartTable="sap.ui.comp.smarttable">
+
+    <Page id="detailPage"
+          title="Order Details"
+          showNavButton="true"
+          navButtonPress=".onNavBack">
+
+        <content>
+
+            <!-- Order Header -->
+           <smartForm:SmartForm id="sfOrderHeader" editable="false" title="Order">
+        <smartForm:Group id="smartgrp">
+          <smartForm:GroupElement id="smartele" label="Order ID">
+            <smartField:SmartField id="smartfield" value="{OrderID}"/>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement id="smartgrpele" label="Customer ID">
+            <smartField:SmartField id="smartfield2" value="{CustomerID}"/>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement id="smartfield3" label="Employee ID">
+            <smartField:SmartField id="smartfield4" value="{EmployeeID}"/>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement id="smartfield5" label="Order Date">
+            <smartField:SmartField id="smartfield7" value="{OrderDate}"/>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement id="smartfield0" label="Required Date">
+            <smartField:SmartField id="smartfieeld" value="{RequiredDate}"/>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement id="smartfieweld" label="Shipped Date">
+            <smartField:SmartField id="smartfdield" value="{ShippedDate}"/>
+          </smartForm:GroupElement>
+          <smartForm:GroupElement id="semartfield" label="Ship Country">
+            <smartField:SmartField id="smdartfield" value="{ShipCountry}"/>
+          </smartForm:GroupElement>
+        </smartForm:Group>
+      </smartForm:SmartForm>
+
+
+     
+
+    </content>
+  </Page>
+</mvc:View>

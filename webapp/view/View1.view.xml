@@ -1,0 +1,30 @@
+<mvc:View
+    controllerName="com.capgemini.project4.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:smarttable="sap.ui.comp.smarttable">
+
+    <Page id="page" title="Orders">
+        <content>
+
+            <smarttable:SmartTable
+                id="smarttable"
+                entitySet="Orders"
+                tableType="ResponsiveTable"
+                enableAutoBinding="true"
+                header="Orders"
+                initiallyVisibleFields="OrderID,CustomerID,OrderDate,Freight">
+
+                <!-- IMPORTANT: valid sap.m.Table tag -->
+                <Table id="ordersTable" mode="SingleSelectMaster" growing="true" itemPress=".onRowPress">
+                    <items>
+                        <ColumnListItem type="Navigation"/>
+                    </items>
+                </Table>
+
+            </smarttable:SmartTable>
+
+        </content>
+    </Page>
+
+</mvc:View>

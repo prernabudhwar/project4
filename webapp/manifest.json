@@ -1,0 +1,91 @@
+{
+  "_version": "1.82.0",
+  "sap.app": {
+    "id": "com.capgemini.project4",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/V2/Northwind/Northwind.svc/",
+        "type": "OData",
+        "settings": {
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+
+  "sap.ui": {
+    "technology": "UI5",
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+
+  "sap.ui5": {
+    "rootView": {
+      "viewName": "com.capgemini.project4.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    },
+
+    "dependencies": {
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.ui.comp": {},
+        "sap.ui.layout": {}
+      }
+    },
+
+    "models": {
+      "": {
+        "type": "sap.ui.model.odata.v2.ODataModel",
+        "dataSource": "mainService",
+        "settings": {
+          "defaultBindingMode": "TwoWay",
+          "useBatch": true
+        }
+      }
+    },
+
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewPath": "com.capgemini.project4.view",
+        "viewType": "XML",
+        "controlId": "idAppControl",
+        "controlAggregation": "pages",
+        "async": true
+      },
+
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": "",
+          "target": "TargetView1"
+        },
+        {
+          "name": "detail",
+          "pattern": "detail/{OrderID}",
+          "target": "TargetView2"
+        }
+      ],
+
+      "targets": {
+        "TargetView1": {
+          "viewName": "View1"
+        },
+        "TargetView2": {
+          "viewName": "View2"
+        }
+      }
+    }
+  }
+}
